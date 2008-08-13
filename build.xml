@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<project name="xstring" default="junit" basedir=".">
+	
+	<path id="classpath">
+		<pathelement location="."/>
+		<pathelement location="junit.jar"/>	
+	</path>
+	
+	<target name="compile">
+		<javac srcdir=".">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	
+	<target name="junit" depends="compile">
+		<java classname="junit.awtui.TestRunner" fork="yes">
+			<arg value="XStringTest"/>
+			<classpath refid="classpath"/>
+		</java>
+	</target>
+	
+</project>
